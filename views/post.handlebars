@@ -1,12 +1,14 @@
 <div class="text-center">
   <h1>{{name}}</h1>
   <p>{{description}}</p>
-  <p>Posted by {{user.name}} 
+  <p>Posted by {{user.name}}</p>
 
 {{#if comments.length}}<!--check if comments exist-->
 
-  <p>Comments:{{comments}}</p>
-
+  <p>Comments:</p>
+ {{#each comments as |comment|}}
+  <p>{{comments.content}}</p>
+  {{/each}}
 
   {{else}}<!--if no comments exist-->
   <p>No comments</p>

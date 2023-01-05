@@ -45,6 +45,9 @@ const newFormHandler = async (event) => {
     const description = document.querySelector('#post-desc-updates').value.trim();
 
     const id = event.target.getAttribute('update-id');
+
+    alert(`id: ${id} name: ${name} desc:${description}`);//debug
+
     const response = await fetch(`/api/posts/${id}`, {
       method: 'PUT',
       body: JSON.stringify({ name, description }),

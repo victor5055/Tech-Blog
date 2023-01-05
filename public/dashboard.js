@@ -40,3 +40,14 @@ const newFormHandler = async (event) => {
       }
     }
   };
+  if(document.querySelector('.new-post-form') != null) {
+    document
+    .querySelector('.new-post-form')
+    .addEventListener('submit', newFormHandler);
+  }
+
+  if(document.querySelector('.post-list') != null) {
+    document
+    .querySelector('.post-list')
+    .addEventListener('click', delButtonHandler);
+  }

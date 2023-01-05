@@ -1,25 +1,26 @@
-<div class="text-center">
-  <h1>{{name}}</h1>
+ <h1>{{name}}</h1>
   <p>{{description}}</p>
   <p>Posted by {{user.name}} on {{date_created}}</p>
-   {{#if logged_in}}
-  {{#if comments.length}}
+   {{#if logged_in}}<!--check if user logged in-->
+  {{#if comments.length}}<!--check if comments exist-->
 </div>
 <div>
 <p>Comments:</p>
   {{#each comments as |comment|}}
   <p>Comment from {{user_id}} on {{comment.date_created}}</p>
   <p>{{comment.content}}</p>
+  <div class="col-md-4">
+    <button class="btn btn-sm btn-danger deleteBtn" data-id="{{comment.id}}">DELETE</button>
+  </div>
   {{/each}}
-  {{else}}
+  {{else}}<!--if no comments exist-->
   <p>No comments</p>
+
 {{/if}}
- <form class="form new-comment-form">
-    <div class="form-group">
+ 
     </div>
   </form>
 </div>
-
+{{/if}}
 <script src="/post.js"></script>
 
-{{/if}}

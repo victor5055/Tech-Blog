@@ -2,6 +2,8 @@
   <h1>{{name}}</h1>
   <p>{{description}}</p>
   <p>Posted by {{user.name}} on {{date_created}}</p>
+   {{#if logged_in}}
+  {{#if comments.length}}
 </div>
 <div>
 <p>Comments:</p>
@@ -11,9 +13,11 @@
   {{/each}}
   {{else}}
   <p>No comments</p>
-  
+{{/if}}
+ <form class="form new-comment-form">
+    <div class="form-group">
     </div>
   </form>
 </div>
-
+{{/if}}
 <script src="/post.js"></script>

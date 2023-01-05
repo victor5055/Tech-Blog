@@ -33,7 +33,7 @@ const newFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.dashboard('/');
+        document.location.replace('/');
         alert('post deleted');
       } else {
         alert('Failed to delete post');

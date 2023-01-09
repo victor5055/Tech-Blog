@@ -72,5 +72,5 @@ router.get('/', async (req, res) => {
   
     res.render('login');
   });
-  
+  //Export router
   module.exports = router;

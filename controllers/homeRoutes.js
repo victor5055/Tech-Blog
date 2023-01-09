@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
       const postData = await Post.findAll({
         include: [{ model: User }],
       });
-      
+      //Serialize data
       const posts = postData.map((post) => post.get({ plain: true }));
   
       res.render('homepage', {
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
       });
   
       const post = postData.get({ plain: true });
-
+ //check if post belongs to user
       let match = false;
       if (req.session.user_id == post.user_id) {
         match = true;
@@ -43,15 +43,34 @@ router.get('/', async (req, res) => {
     }
   });
 
-  let match = false;
-  if (req.session.user_id == post.user_id) {
- router.get('/dashboard', withAuth, async (req, res) => {
-  // Find the logged in user based on the session ID
-  const userData = await User.findByPk(req.session.user_id, {
-    attributes: { exclude: ['password'] },
-    include: [{ model: Post },],
+  // Use withAuth middleware to prevent access to route
+  router.get('/dashboard', withAuth, async (req, res) => {
+    try {
+      // Find the logged in user based on the session ID
+      const userData = await User.findByPk(req.session.user_id, {
+        attributes: { exclude: ['password'] },
+        include: [{ model: Post },],
+      });
+  
+      const user = userData.get({ plain: true });
+  
+      res.render('dashboard', {
+        ...user,
+        logged_in: true
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
   });
-
-  const user = userData.get({ plain: true });
-}
-};
+  
+  router.get('/login', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+      res.redirect('/dashboard');
+      return;
+    }
+  
+    res.render('login');
+  });
+  
+  module.exports = router;

@@ -24,4 +24,24 @@ const sess = {
     resave: false,
     saveUninitialized: true,
   };
-  app.use(session(sess))
+  app.use(session(sess));
+
+  // Inform Express.js to use Handlebars.js as the default template engine
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+//import sequelize connection
+const sequelize = require('./config/connection');
+
+// middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Set up for the routes
+app.use(routes);
+
+// sync sequelize models to the database, then turn on the server
+sequelize.sync({ force: false}).then(() => {
+  app.listen(PORT, () => console.log(`Sever listening on http://localhost:${PORT}`));
+});

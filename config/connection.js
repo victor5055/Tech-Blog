@@ -12,5 +12,5 @@ const sequelize = process.env.JAWSDB_URL
       decimalNumbers: true,
     },
   });
-
+//Export sequelize
 module.exports = sequelize;

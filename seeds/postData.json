@@ -1,13 +1,14 @@
 [
     {
-      "name": 
-      "description"
-    {
-        "name": 
-        "description"
+      "name": "What is MVC (Model View Controller)?",
+      "description": "Model view controller (MVC) is a software architectural pattern for implementing user interfaces. It divides a given software application into three interconnected parts, so as to separate internal representation of information from the way that information is presented to or accepted from the user."
     },
     {
-        "name": 
-        "description"
+        "name": "What are the main differences between SQL and NoSQL databases?",
+        "description": "SQL databases are table-based, while NoSQL databases are non-relational. This means that a SQL database contains structured data and can perform an analysis using a relational model."
+    },
+    {
+        "name": "Object-Relational Mapping",
+        "description": "I have really loved learning about ORMs. It's really simplified the way I create queries in SQL!"
     }
   ]

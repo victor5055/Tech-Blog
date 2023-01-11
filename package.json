@@ -12,9 +12,12 @@
     "type": "git",
     "url": "git+https://github.com/victor5055/Tech-Blog.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "example",
+    "heroku"
+  ],
+  "author": "Victor Pereira",
+  "license": "MIT",
   "bugs": {
   },
   "dependencies": {
@@ -27,4 +30,5 @@
     "mysql2": "^2.3.3",
     "sequelize": "^6.28.0"
   }
+
 }

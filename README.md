@@ -1,7 +1,7 @@
 # Tech-Blog
 14 Model-View-Controller (MVC)
 
-[Deployed Application]()
+[Deployed Heroku App](https://stark-caverns-54506.herokuapp.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
@@ -63,7 +63,7 @@ none
 
 ## Installation
 ###### [Back to Table of Contents](#Table-of-Contents)
-The following tools were used for the development and testing of this project. Code development IDE (Microsoft VS Code) node.js (JavaScript runtime environment) npm (software registry containing mysql2, express, express-handlebars, express-session, bcrypt, dotenv and sequelize).
+The following tools were used for the development and testing of this project. Code development IDE (Microsoft VS Code) node.js (JavaScript runtime environment) npm (software registry containing mysql2, express, express-handlebars, express-session, bcrypt, dotenv and sequelize). The application includes login and logout features to store user session data as a cookie and uses the dotenv and bcrypt packages to support data/password protection. The application is deployed to Heroku on (Heroku deployed app above).
 
 To clone the repo: git@github.com:victor5055/Tech-Blog.git
 git clone 
@@ -76,7 +76,7 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
 ### Screenshots (Building this application)
 ###### [Back to Table of Contents](#Table-of-Contents)
-![](./)
+![](./Tech%20Pic.PNG)
 
     
 

@@ -12,7 +12,7 @@ const session = require('express-session');
 
 // express app
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Set up sessions
 const sess = {

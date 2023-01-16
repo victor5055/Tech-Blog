@@ -65,6 +65,8 @@ none
 ###### [Back to Table of Contents](#Table-of-Contents)
 The following tools were used for the development and testing of this project. Code development IDE (Microsoft VS Code) node.js (JavaScript runtime environment) npm (software registry containing mysql2, express, express-handlebars, express-session, bcrypt, dotenv and sequelize). The application includes login and logout features to store user session data as a cookie and uses the dotenv and bcrypt packages to support data/password protection. The application is deployed to Heroku on (Heroku deployed app above).
 
+For development: Use npm commands to install npm packages. Use MySQL commands to source the database. Use npm commands to seed data and run the server.
+
 To clone the repo: git@github.com:victor5055/Tech-Blog.git
 git clone 
 
